@@ -1,9 +1,10 @@
-
+// Cart constructor
 function CartManager() {
     this.cart = JSON.parse(sessionStorage.getItem('cart')) || [];
     this.updateCartDisplay();
 }
 
+// Add to cart
 CartManager.prototype.addToCart = function(item) {
     console.log('Adding item:', item); // Console logging for verification
     const existingItem = this.cart.find(cartItem => cartItem.id === item.id);
@@ -19,7 +20,7 @@ CartManager.prototype.addToCart = function(item) {
     this.updateCartDisplay();
 }
 
-// Remove an item from cart
+// Remove from cart
 CartManager.prototype.removeFromCart = function(itemId) {
     const itemExists = this.cart.some(item => item.id === itemId);
     if (!itemExists) {
@@ -37,6 +38,7 @@ CartManager.prototype.saveCart = function() {
     sessionStorage.setItem('cart', JSON.stringify(this.cart));
 }
 
+// Live update cart display
 CartManager.prototype.updateCartDisplay = function() {
     const cartCountElement = document.getElementById('cart-count');
     
@@ -129,6 +131,7 @@ CartManager.prototype.renderCartDetails = function() {
     }
 }
 
+// Event listener for add/remove buttons
 document.addEventListener('DOMContentLoaded', () => {
     window.cartManager = new CartManager();
 
@@ -156,7 +159,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // Attach event listeners to the buttons
 document.querySelectorAll('.quantity-buttons').forEach(buttonContainer => {
-  const itemId = buttonContainer.getAttribute('data-item-id');  // Get the item ID from the data attribute
+  const itemId = buttonContainer.getAttribute('data-item-id');
 
   const decrementButton = buttonContainer.querySelector('.decrement');
   const incrementButton = buttonContainer.querySelector('.increment');

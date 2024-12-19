@@ -1,5 +1,5 @@
 import { jsPDF } from "jspdf";
-import { orderNumber } from './checkout.js'; // Import OrderNumber
+import { orderNumber } from './checkout.js';
 
 document.addEventListener('DOMContentLoaded', () => {
     const generatePDFButton = document.querySelector('#PDFButton');
@@ -51,25 +51,17 @@ document.addEventListener('DOMContentLoaded', () => {
         doc.text('Total: $' + Total, 20, 60);
 
     // Shipping Label
-    doc.setFontSize(25);
-    doc.text(ShippingLabel,xPosition+7,100);
-    doc.setFontSize(8);
-    doc.text('Warehouse 2',20,110);
-    doc.text('123 Wrench Ln',20,115);
-    doc.text('Wrench City, KT',20,120);
-    doc.setFontSize(12);
-    doc.text(customerName,xPosition+7,130);
-    doc.text(customerAddr,xPosition+7,140);
-    doc.text(customerState+ ', ' + customerCity,xPosition+7,150);
-    doc.text('United States of America',xPosition+7,160);
-
-
-
-
-
-
-
-
+        doc.setFontSize(25);
+        doc.text(ShippingLabel,xPosition+7,100);
+        doc.setFontSize(8);
+        doc.text('Warehouse 2',20,110);
+        doc.text('123 Wrench Ln',20,115);
+        doc.text('Wrench City, KT',20,120);
+        doc.setFontSize(12);
+        doc.text(customerName,xPosition+7,130);
+        doc.text(customerAddr,xPosition+7,140);
+        doc.text(customerState+ ', ' + customerCity,xPosition+7,150);
+        doc.text('United States of America',xPosition+7,160);
     doc.save('TheWrenchInvoice.pdf');
 });
 });
