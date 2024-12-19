@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <link href="/src/styles/input.css" rel="stylesheet">
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/wrench.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Warehouse</title>
+    <script type="module" src="/src/pdfgenerator.js"></script>
+    <script src="/src/cart.js"></script>
+    <script src="/src/checkout.js"></script>
+  </head>
+
+  <!-- Warehouse Panel Header -->
+  <body>
+    <div class="border-black flex justify-center">
+      <h1 class ="my-4 text-center font-serif text-5xl font-bold text-gray-800 md:mb-6 md:text-6xl">Warehouse Panel </h1>
+    </div>
+
+  <!-- Warehouse Panel Header Horizontal Rule -->
+    <div class="border-black flex justify-center">
+      <hr class="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700 w-1/2">
+    </div>
+
+  <!-- Orders Headers -->
+    <div class="border-black flex grid-cols-2 justify-center gap-96 mb-4">
+      <h2 class="text-2xl font-serif text-gray-800">New Orders</h2>
+      <h2 class="text-2xl font-serif text-gray-800">Old Orders</h2>
+    </div>
+
+
+  <!-- Orders Tables -->
+    <div class="flex justify-center items-center mb-8">
+      <div class="flex w-1/2 space-x-4">
+        <!-- New Orders Table -->
+        <div class="bg-gray-200 flex-1 overflow-y-scroll h-96">
+          <!-- *********NEW TABLE CONTENT ENTERED HERE*********** -->
+        </div>
+
+        <!-- Old Orders Table -->
+        <div class="bg-gray-200 flex-1 overflow-y-scroll h-96">
+        <!-- ***********OLD TABLE CONTENT ENTERED HERE*********** -->
+        </div>
+      </div>
+    </div>
+
+  <!-- Process Order Button -->
+  <div class="flex justify-center my-8">
+    <button class="shrink-0 rounded-full bg-gray-600 px-8 py-3 font-medium text-white focus:bg-red-700 focus:outline-none hover:bg-red-700">Process Order</button>
+  </div> 
+
+  <!-- PDF Generator Button -->
+  <div class="flex justify-center">
+    <button id="PDFButton" class="shrink-0 rounded-full bg-green-600 px-8 py-3 font-medium text-white focus:bg-red-700 focus:outline-none hover:bg-red-700">Generate PDF</button>
+  </div>  
+
+  <!-- Homepage Button -->
+  <div class="flex justify-center my-8">
+    <div>
+      <a href="/" class="block py-2 px-3 rounded text-red-600 text-center">Homepage</a>
+    </div>
+  </div> 
+  </body>
+</html>

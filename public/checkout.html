@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="en">
+  
+  <head>
+    <link href="/src/styles/checkout.css" rel="stylesheet">
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/public/assets/wrench.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Wrench</title>
+  </head>
+  <body class="bg-neutral-900">
+    <div class="bg-red-500 p-4 text-3xl">Checkout</div>
+
+    <div id="errorSplash" class="error-splash hide">
+      <div class="font-bold mb-2">Invalid Card Information</div>
+      <div>Please check your card details and input the correct information.</div>
+    </div>
+    
+    <div class="flex justify-center space-x-8">
+      <div><h1 class="text-4xl text-white">The Wrench</h1></div>
+    </div>
+
+    <div class="flex justify-center space-x-8">
+      <img src="/public/assets/wrench.svg" class="w-32" alt="Wrench Logo">
+    </div>
+    
+    <div class="flex justify-center items-center">
+      <form id="checkoutForm" class="w-full max-w-md">
+        <div class="space-y-4">
+          <div>
+            <label class="text-white block mb-2" for="firstName">First Name:</label>
+            <input 
+              type="text" 
+              id="firstName" 
+              name="firstName" 
+              maxlength="30" 
+              placeholder="John" 
+              class="w-full p-2 rounded bg-neutral-800 text-white"
+              required
+            >
+          </div>
+
+          <div>
+            <label class="text-white block mb-2" for="lastName">Last Name:</label>
+            <input 
+              type="text" 
+              id="lastName" 
+              name="lastName" 
+              maxlength="30" 
+              placeholder="Lehuta" 
+              class="w-full p-2 rounded bg-neutral-800 text-white"
+              required
+            >
+          </div>
+
+          <div>
+            <label class="text-white block mb-2" for="streetAddress">Street Address:</label>
+            <input 
+              type="text" 
+              id="streetAddress" 
+              name="streetAddress" 
+              placeholder="308 Negra Arroyo Lane" 
+              class="w-full p-2 rounded bg-neutral-800 text-white"
+              required
+            >
+          </div>
+
+          <div>
+            <label class="text-white block mb-2" for="city">City:</label>
+            <input 
+              type="text" 
+              id="city" 
+              name="city" 
+              placeholder="Albuquerque" 
+              class="w-full p-2 rounded bg-neutral-800 text-white"
+              required
+            >
+          </div>
+
+          <div>
+            <label class="text-white block mb-2" for="state">Select a state:</label>
+            <select 
+              id="state" 
+              name="state" 
+              class="w-full p-2 rounded bg-neutral-800 text-white"
+              required
+            >
+              <option value="">-- Select a state --</option>
+              <option value="AL">Alabama</option>
+              <option value="AK">Alaska</option>
+              <option value="AZ">Arizona</option>
+              <option value="AR">Arkansas</option>
+              <option value="CA">California</option>
+              <option value="CO">Colorado</option>
+              <option value="CT">Connecticut</option>
+              <option value="DE">Delaware</option>
+              <option value="FL">Florida</option>
+              <option value="GA">Georgia</option>
+              <option value="HI">Hawaii</option>
+              <option value="ID">Idaho</option>
+              <option value="IL">Illinois</option>
+              <option value="IN">Indiana</option>
+              <option value="IA">Iowa</option>
+              <option value="KS">Kansas</option>
+              <option value="KY">Kentucky</option>
+              <option value="LA">Louisiana</option>
+              <option value="ME">Maine</option>
+              <option value="MD">Maryland</option>
+              <option value="MA">Massachusetts</option>
+              <option value="MI">Michigan</option>
+              <option value="MN">Minnesota</option>
+              <option value="MS">Mississippi</option>
+              <option value="MO">Missouri</option>
+              <option value="MT">Montana</option>
+              <option value="NE">Nebraska</option>
+              <option value="NV">Nevada</option>
+              <option value="NH">New Hampshire</option>
+              <option value="NJ">New Jersey</option>
+              <option value="NM">New Mexico</option>
+              <option value="NY">New York</option>
+              <option value="NC">North Carolina</option>
+              <option value="ND">North Dakota</option>
+              <option value="OH">Ohio</option>
+              <option value="OK">Oklahoma</option>
+              <option value="OR">Oregon</option>
+              <option value="PA">Pennsylvania</option>
+              <option value="RI">Rhode Island</option>
+              <option value="SC">South Carolina</option>
+              <option value="SD">South Dakota</option>
+              <option value="TN">Tennessee</option>
+              <option value="TX">Texas</option>
+              <option value="UT">Utah</option>
+              <option value="VT">Vermont</option>
+              <option value="VA">Virginia</option>
+              <option value="WA">Washington</option>
+              <option value="WV">West Virginia</option>
+              <option value="WI">Wisconsin</option>
+              <option value="WY">Wyoming</option>
+            </select>
+          </div>
+
+          <div>
+            <label class="text-white block mb-2" for="cardNumber">Card Number:</label>
+            <input 
+              type="text" 
+              id="cardNumber" 
+              name="cardNumber" 
+              maxlength="19" 
+              placeholder="1234 5678 9012 3456" 
+              class="w-full p-2 rounded bg-neutral-800 text-white"
+              required
+            >
+            <div id="cardNumberError" class="text-red-500 text-sm mt-1 hidden"></div> <!-- Error message for card number -->
+          </div>
+
+          <div>
+            <label class="text-white block mb-2" for="expirationDate">Expiration Date:</label>
+            <input 
+              type="text" 
+              id="expirationDate" 
+              name="expirationDate" 
+              maxlength="7" 
+              placeholder="MM/YYYY" 
+              class="w-full p-2 rounded bg-neutral-800 text-white"
+              required
+            >
+            <div id="expirationDateError" class="text-red-500 text-sm mt-1 hidden"></div> <!-- Error message for expiration date -->
+          </div>
+
+          <div>
+            <label class="text-white block mb-2" for="securityCode">Security Code:</label>
+            <input 
+              type="text" 
+              id="securityCode" 
+              name="securityCode" 
+              maxlength="4" 
+              placeholder="123" 
+              class="w-full p-2 rounded bg-neutral-800 text-white"
+              required
+            >
+          </div>
+
+          <div class="flex justify-center">
+            <div id="confirmPayment" class="button button--action p-3 bg-blue-500 text-white rounded cursor-pointer">
+              Confirm Payment
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <div id="authorizationNumberContainer" class="hidden">
+      <p class="text-white">Your authorization number is: <span id="authorizationNumber"></span></p>
+    </div>
+  
+    <script type="module" src="/src/checkout.js"></script>
+  </body>
+</html>

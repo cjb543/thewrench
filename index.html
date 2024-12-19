@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link href="/src/styles/input.css" rel="stylesheet" />
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/assets/wrench.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Wrench</title>
+  </head>
+  <body>
+    <div id="app"></div>
+    <script type="module" src="/src/main.js"></script>
+    <script src="/src/cart.js"></script>
+    <nav class="bg-white border-gray-200 rounded-lg m-4">
+      <div
+        class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4"
+      >
+        <a href="/" class="flex items-center space-x-3 rtl:space-x-reverse">
+          <img src="/assets/wrench.svg" class="h-8 pr-4" alt="The Wrench Logo" />
+          <span
+            class="self-center text-2xl font-semibold whitespace-nowrap text-gray-800"
+            >The Wrench</span
+          >
+        </a>
+        <div class="flex">
+          <div class="relative hidden md:block">
+            <div
+              class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none"
+            >
+              <svg
+                class="w-4 h-4 text-gray-500 dark:text-gray-400"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"
+                />
+              </svg>
+              <span class="sr-only">Search icon</span>
+            </div>
+            <input
+              type="text"
+              id="search-navbar"
+              class="block w-full p-2 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              placeholder="Search..."
+            />
+          </div>
+        </div>
+        <div
+          class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1"
+          id="navbar-search"
+        >
+          <div class="relative mt-3 md:hidden">
+            <div
+              class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none"
+            >
+              <svg
+                class="w-4 h-4 text-gray-500 dark:text-gray-400"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"
+                />
+              </svg>
+            </div>
+            <input
+              type="text"
+              id="search-navbar"
+              class="block w-full p-2 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              placeholder="Search..."
+            />
+          </div>
+          <ul
+            class="flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 bg-white dark:border-gray-700"
+          >
+            <li>
+              <a
+                href="/"
+                class="block py-2 px-3 rounded md:bg-transparent md:p-0 text-black"
+                aria-current="page"
+                >Home</a
+              >
+            </li>
+            <li>
+              <a
+                href="/public/about"
+                class="block py-2 px-3 rounded hover:bg-gray-100 md:hover:bg-transparent text-black md:p-0 hover:text-black dark:hover:bg-gray-700 dark:hover:text-black md:dark:hover:bg-transparent dark:border-gray-700"
+                >About</a
+              >
+            </li>
+            <li>
+              <a
+                href="/public/cart"
+                class="block py-2 px-3 rounded hover:bg-gray-100 md:hover:bg-transparent text-black md:p-0 hover:text-black dark:hover:bg-gray-700 dark:hover:text-black md:dark:hover:bg-transparent dark:border-gray-700"
+                >Cart</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Featured Items Header -->
+    <div class="bg-white rounded-lg mx-4">
+      <h2 class="text-black text-3xl font-bold lg:text-5xl text-center pt-6">
+        Featured Items
+      </h2>
+      <hr
+        class="w-full h-1 mx-auto my-4 bg-gray-100 border-0 rounded md:my-10"
+      />
+    </div>
+
+    <!-- Featured Item Cards -->
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-4 bg-white rounded-lg mx-4">
+      <div
+        class="group my-10 flex w-full max-w-xs flex-col overflow-hidden rounded-lg border border-gray-100 bg-white shadow-md mx-auto"
+      >
+        <a
+          class="relative mx-3 mt-3 flex h-60 overflow-hidden rounded-xl"
+        >
+          <img
+            class="peer absolute top-0 right-0 h-full w-full object-cover"
+            src="/assets/Windshield+Polymer.jpg"
+            alt="product image"
+          />
+        </a>
+        <div class="mt-4 px-5 pb-5">
+            <h5 class="text-xl tracking-tight text-slate-900">
+              Windshield + Polymer
+            </h5>
+          <div class="mt-2 mb-5 flex items-center justify-between">
+            <p>
+              <span class="text-3xl font-bold text-slate-900">$178.76</span>
+              <span class="text-sm text-slate-900 line-through">$200</span>
+            </p>
+          </div>
+          <a
+            class="add-to-cart-btn flex items-center justify-center rounded-md bg-slate-900 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-gray-700 focus:outline-none"
+            data-part-id="1" 
+            data-part-name="Windshield + Polymer" 
+            data-part-price="178.76" 
+            data-part-image="/assets/Windshield+Polymer.jpg"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="mr-2 h-6 w-6"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"
+              />
+            </svg>
+            Add to cart</a
+          >
+        </div>
+      </div>
+      <div
+        class="group my-10 flex w-full max-w-xs flex-col overflow-hidden rounded-lg border border-gray-100 bg-white shadow-md mx-auto"
+      >
+        <a
+          class="relative mx-3 mt-3 flex h-60 overflow-hidden rounded-xl"
+        >
+          <img
+            class="peer top-0 right-0 h-full w-full object-cover"
+            src="/assets/WiperBladePair.jpg"
+            alt="product image"
+          />
+        </a>
+        <div class="mt-4 px-5 pb-5">
+            <h5 class="text-xl tracking-tight text-slate-900">
+              Wiper Blade Pair
+            </h5>
+          <div class="mt-2 mb-5 flex items-center justify-between">
+            <p>
+              <span class="text-3xl font-bold text-slate-900">$23.37</span>
+              <span class="text-sm text-slate-900 line-through">$30</span>
+            </p>
+          </div>
+          <a
+            class="add-to-cart-btn flex items-center justify-center rounded-md bg-slate-900 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-gray-700 focus:outline-none"
+            data-part-id="2" 
+            data-part-name="Wiper Blade Pair" 
+            data-part-price="23.37" 
+            data-part-image="/assets/WiperBladePair.jpg">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="mr-2 h-6 w-6"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"
+              />
+            </svg>
+            Add to cart</a
+          >
+        </div>
+      </div>
+      <div
+        class="group my-10 flex w-full max-w-xs flex-col overflow-hidden rounded-lg border border-gray-100 bg-white shadow-md mx-auto"
+      >
+        <a
+          class="relative mx-3 mt-3 flex h-60 overflow-hidden rounded-xl"
+        >
+          <img
+            class="peer absolute top-0 right-0 h-full w-full object-cover"
+            src="/assets/BucketSeatPair.jpg"
+            alt="product image"
+          />
+        </a>
+        <div class="mt-4 px-5 pb-5">
+            <h5 class="text-xl tracking-tight text-slate-900">
+              Bucket Seat Pair
+            </h5>
+          <div class="mt-2 mb-5 flex items-center justify-between">
+            <p>
+              <span class="text-3xl font-bold text-slate-900">$315.94</span>
+              <span class="text-sm text-slate-900 line-through">$399</span>
+            </p>
+          </div>
+          <a
+            class="add-to-cart-btn flex items-center justify-center rounded-md bg-slate-900 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-gray-700 focus:outline-none"
+            data-part-id="5" 
+            data-part-name="Bucket Seat Pair" 
+            data-part-price="315.94" 
+            data-part-image="/assets/BucketSeatPair.jpg">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="mr-2 h-6 w-6"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"
+              />
+            </svg>
+            Add to cart</a
+          >
+        </div>
+      </div>
+      <div
+        class="group my-10 flex w-full max-w-xs flex-col overflow-hidden rounded-lg border border-gray-100 bg-white shadow-md mx-auto"
+      >
+        <a
+          class="relative mx-3 mt-3 flex h-60 overflow-hidden rounded-xl"
+        >
+          <img
+            class="peer absolute top-0 right-0 h-full w-full object-cover"
+            src="/assets/5PointHarness.jpg"
+            alt="product image"
+          />
+        </a>
+        <div class="mt-4 px-5 pb-5">
+            <h5 class="text-xl tracking-tight text-slate-900">
+              5 Point Harness
+            </h5>
+          <div class="mt-2 mb-5 flex items-center justify-between">
+            <p>
+              <span class="text-3xl font-bold text-slate-900">$177.79</span>
+              <span class="text-sm text-slate-900 line-through">$199</span>
+            </p>
+          </div>
+          <a
+            class="add-to-cart-btn flex items-center justify-center rounded-md bg-slate-900 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-gray-700 focus:outline-none"
+            data-part-id="6" 
+            data-part-name="5PointHarness" 
+            data-part-price="177.79" 
+            data-part-image="/assets/5PointHarness.jpg">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="mr-2 h-6 w-6"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"
+              />
+            </svg>
+            Add to cart</a
+          >
+        </div>
+      </div>
+    </div>
+
+    <a href="/public/catalog"><div
+      class="group flex sm:w-1/4 mx-4 sm:mx-auto cursor-pointer items-center justify-center rounded-md bg-gray-900 px-6 py-2 text-white transition"
+    >
+      <span
+        class="group flex w-full items-center justify-center rounded py-1 text-center font-bold text-2xl"
+      >
+      See Our Full Inventory
+      </span>
+      <svg
+        class="flex-0 ml-4 h-6 w-6 transition-all group-hover:ml-8"
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+        stroke-width="2"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M14 5l7 7m0 0l-7 7m7-7H3"
+        />
+      </svg>
+    </div></a>
+    <hr class="w-full h-1 mx-auto my-4 bg-gray-100 border-0 rounded md:my-10" />
+
+    <!-- Reviews Section -->
+    <div class="bg-white rounded-lg px-4 mx-3 md:mx-0">
+      <div class="my-10 mx-auto max-w-screen-md py-16">
+        <div class="flex w-full flex-col">
+          <div class="flex flex-col sm:flex-row">
+            <h1 class="max-w-sm text-3xl font-bold text-black">
+              What people think about The Wrench
+            </h1>
+            <div
+              class="my-4 rounded-xl bg-white py-2 px-4 shadow sm:my-0 sm:mx-auto"
+            >
+              <div
+                class="flex h-16 items-center text-2xl font-bold text-black mx-16 sm:mx-4"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-12 w-12 text-yellow-400"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                >
+                  <path
+                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                  />
+                </svg>
+                4.7
+              </div>
+              <p class="text-sm text-gray-500 text-center">
+                Average User Rating
+              </p>
+            </div>
+          </div>
+          <div class="text-gray-700">
+            <p class="font-medium">Reviews</p>
+            <ul class="mb-6 mt-2 space-y-2">
+              <li class="flex items-center text-sm font-medium">
+                <span class="w-3">5</span
+                ><span class="mr-4 text-yellow-400"
+                  ><svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-5 w-5"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                  >
+                    <path
+                      d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                    /></svg></span>
+                <div
+                  class="mr-4 h-2 w-96 overflow-hidden rounded-full bg-gray-300"
+                >
+                  <div class="h-full w-10/12 bg-yellow-400"></div>
+                </div>
+                <span class="w-3">56</span>
+              </li>
+              <li class="flex items-center text-sm font-medium">
+                <span class="w-3">4</span
+                ><span class="mr-4 text-yellow-400"
+                  ><svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-5 w-5"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                  >
+                    <path
+                      d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg></span>
+                <div
+                  class="mr-4 h-2 w-96 overflow-hidden rounded-full bg-gray-300"
+                >
+                  <div class="h-full w-8/12 bg-yellow-400"></div>
+                </div>
+                <span class="w-3">12</span>
+              </li>
+              <li class="flex items-center text-sm font-medium">
+                <span class="w-3">3</span
+                ><span class="mr-4 text-yellow-400"
+                  ><svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-5 w-5"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                  >
+                    <path
+                      d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg></span>
+                <div
+                  class="mr-4 h-2 w-96 overflow-hidden rounded-full bg-gray-300"
+                >
+                  <div class="h-full w-1/12 bg-yellow-400"></div>
+                </div>
+                <span class="w-3">4</span>
+              </li>
+              <li class="flex items-center text-sm font-medium">
+                <span class="w-3">2</span
+                ><span class="mr-4 text-yellow-400"
+                  ><svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-5 w-5"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                  >
+                    <path
+                      d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg></span>
+                <div
+                  class="mr-4 h-2 w-96 overflow-hidden rounded-full bg-gray-300"
+                >
+                  <div class="h-full w-0 bg-yellow-400"></div>
+                </div>
+                <span class="w-3">0</span>
+              </li>
+              <li class="flex items-center text-sm font-medium">
+                <span class="w-3">1</span
+                ><span class="mr-4 text-yellow-400">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-5 w-5"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                  >
+                    <path
+                      d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                    />
+                  </svg>
+                </span>
+                <div
+                  class="mr-4 h-2 w-96 overflow-hidden rounded-full bg-gray-300"
+                >
+                  <div class="h-full w-1/12 bg-yellow-400"></div>
+                </div>
+                <span class="w-3">5</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-200 rounded-lg shadow m-4">
+      <div class="w-full max-w-screen-xl mx-auto p-4 md:py-8">
+        <div class="sm:flex sm:items-center sm:justify-between">
+          <a
+            href="/"
+            class="flex items-center mb-4 sm:mb-0 space-x-3 rtl:space-x-reverse"
+          >
+            <img src="/assets/wrench.svg" class="h-8 pr-4" alt="The Wrench Logo" />
+            <span
+              class="self-center text-2xl font-semibold whitespace-nowrap text-black"
+              >The Wrench</span
+            >
+          </a>
+          <ul
+            class="flex flex-wrap items-center mb-6 text-sm font-medium text-black sm:mb-0"
+          >
+            <li>
+              <a href="/public/about" class="hover:underline mx-4 md:me-6">About</a>
+            </li>
+            <li>
+              <a href="/public/privacypolicy" class="hover:underline me-4 md:me-6"
+                >Privacy Policy</a
+              >
+            </li>
+            <li>
+              <a href="/public/careers" class="hover:underline me-4 md:me-6"
+                >Careers</a
+              >
+            </li>
+            <li>
+              <a href="/public/ege" class="hover:underline">Ege</a>
+            </li>
+            <li>
+              <a href="/public/samplelogin" class="hover:underline ml-4"
+                >Admin</a
+              >
+            </li>
+          </ul>
+        </div>
+        <hr class="my-6 border-gray-700 sm:mx-auto lg:my-8" />
+        <span class="block text-sm text-black sm:text-center"
+          >© 2024 <a href="/" class="hover:underline">WrenchCorp™</a>. All
+          Rights Reserved.</span
+        >
+      </div>
+    </footer>
+  </body>
+</html>
