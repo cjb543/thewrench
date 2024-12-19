@@ -1,3 +1,4 @@
+// Generate order number for each order to be used after
 export const orderNumber = (Math.floor(Math.random() * (Math.floor(1000000) - Math.ceil(1) + 1) + Math.ceil(1)));
 
 document.addEventListener('DOMContentLoaded', () => {
