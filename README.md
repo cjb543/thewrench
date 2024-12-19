@@ -16,7 +16,7 @@ A third interface also runs in the warehouse, at the receiving desk. Whenever pr
 And lastly, there will be an administrative interface that allows to set the shipping and handling charges, as well as view all orders. Shipping and handling charges are based on the weight of a complete order. This interface allows to set the weight brackets and their charges. Orders can be searched based on date range, status (authorized, shipped) or prize range. The complete order detail is displayed for a selected order.
 ## Dependencies and Resources Used
 nodemailer \
-     https://www.nodemailer.com/ \
+     https://www.nodemailer.com/ 
 
 jspdf \
     https://parall.ax/products/jspdf
